@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h1>{{ featurerequest.title }}</h1>
+    <p>{{ featurerequest.description }}</p>
+
+    <p><a href="{% url 'quality_control:update_feature' featurerequest.id %}">Изменить запрос на улучшение</a></p>
+
+    <p><a href="{% url 'quality_control:delete_feature' featurerequest.id %}">Удалить запрос на улучшение</a></p>
+
+    <p>Статус: {{ featurerequest.status }}</br>
+        Приоритет: {{featurerequest.priority}}</br>
+        Проект -> задача: {{featurerequest.project}} -> {{featurerequest.task}}</p>
+
+{% endblock %}

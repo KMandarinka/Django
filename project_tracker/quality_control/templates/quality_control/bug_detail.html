@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h1>{{ bugreport.title }}</h1>
+    <p>{{ bugreport.description }}</p>
+
+    <p><a href="{% url 'quality_control:update_bug' bugreport.id %}">Изменить отчет об ошибке</a></p>
+
+    <p><a href="{% url 'quality_control:delete_bug' bugreport.id %}">Удалить отчет об ошибке</a></p>
+
+    <p>Статус: {{ bugreport.status }}</br>
+        Приоритет: {{ bugreport.priority }}</br>
+        Проект -> задача: {{ bugreport.project }} -> {{ bugreport.task }}</p>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h2>Добавить новый запрос на улучшение</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Создать запрос на улучшение</button>
+    </form>
+{% endblock %}
